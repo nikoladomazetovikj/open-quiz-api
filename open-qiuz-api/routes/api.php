@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResources([
         'categories' => \App\Http\Controllers\Api\CategoryController::class,
+        'difficulties' => \App\Http\Controllers\Api\DifficultyController::class
     ]);
 });
 
 // list all categories
 Route::get('allCategories', [\App\Http\Controllers\Api\CategoryController::class, 'index']);
+Route::get('allDifficulties', [\App\Http\Controllers\Api\DifficultyController::class, 'index']);
 
