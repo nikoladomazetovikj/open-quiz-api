@@ -1,4 +1,5 @@
-import {Col, Container, Row} from "react-bootstrap";
+import {Card, Col, Container, Row} from "react-bootstrap";
+import FormGenerate from "@/components/home/FormGenerate";
 
 const Home = props => {
 
@@ -9,6 +10,7 @@ const Home = props => {
                     <h1>Welcome To Open API Quiz</h1>
                 </Col>
             </Row>
+            <FormGenerate/>
         </Container>
     );
 
