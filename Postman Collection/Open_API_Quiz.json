@@ -7,6 +7,11 @@
 	},
 	"item": [
 		{
+			"name": "New Folder",
+			"item": [],
+			"id": "fb06b3a7-b494-44f8-bb85-e13ed7bcba3e"
+		},
+		{
 			"name": "Get data",
 			"event": [
 				{
@@ -197,12 +202,12 @@
 	],
 	"variable": [
 		{
-			"id": "8cdc7521-4a0e-48f1-b9bb-4e395a01b177",
+			"id": "25fe0163-08a5-46ca-8e93-214083ba5518",
 			"key": "id",
 			"value": "1"
 		},
 		{
-			"id": "03ad08d0-7a86-4ab4-9772-0ba644545cdb",
+			"id": "5a70cc3c-0116-4e29-9480-fb61b19eff6e",
 			"key": "base_url",
 			"value": "https://postman-rest-api-learner.glitch.me/"
 		}
