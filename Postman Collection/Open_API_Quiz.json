@@ -12,7 +12,7 @@
 			"id": "fb06b3a7-b494-44f8-bb85-e13ed7bcba3e"
 		},
 		{
-			"name": "New Folder",
+			"name": "Admin",
 			"item": [],
 			"id": "e7a38a9a-c8e6-49f4-8174-8fe1ac4117fa"
 		},
@@ -207,12 +207,12 @@
 	],
 	"variable": [
 		{
-			"id": "6372c372-522c-4c96-891a-2ee490e23fc8",
+			"id": "d24327fe-4e65-4725-a047-842ba34eb304",
 			"key": "id",
 			"value": "1"
 		},
 		{
-			"id": "efe5816c-4851-45ea-bec0-7be56036395a",
+			"id": "33338df9-96e3-4bd7-9393-1877e4446bf1",
 			"key": "base_url",
 			"value": "https://postman-rest-api-learner.glitch.me/"
 		}
