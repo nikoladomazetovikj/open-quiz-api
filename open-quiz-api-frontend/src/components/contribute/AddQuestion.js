@@ -20,6 +20,7 @@ const AddQuestion = () => {
 
     const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedDifficulty, setSelectedDifficulty] = useState('');
+    const [fieldErrors, setFieldErrors] = useState({});
 
     const handleCategorySelect = (category) => {
         setSelectedCategory(category);
@@ -58,13 +59,39 @@ const AddQuestion = () => {
                 [name]: inputValue,
             }));
         }
+        setFieldErrors((prevFieldErrors) => ({
+            ...prevFieldErrors,
+            [name]: null,
+        }));
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        console.log('Selected Category:', selectedCategory);
-        console.log('Selected Difficulty:', selectedDifficulty);
+        const errors = {};
+
+        if (!formData.question) {
+            errors.question = 'Question is required';
+        }
+
+        if (!formData.answer_1) {
+            errors.answer_1 = 'Answer 1 is required';
+        }
+        if (!formData.answer_2) {
+            errors.answer_2 = 'Answer 2 is required';
+        }
+        if (!formData.answer_3) {
+            errors.answer_3 = 'Answer 3 is required';
+        }
+        if (!formData.answer_4) {
+            errors.answer_4 = 'Answer 4 is required';
+        }
+
+        if (Object.keys(errors).length > 0) {
+            setFieldErrors(errors);
+            return;
+        }
+
 
         // Send POST request to /api/addQuestion with formData
         fetch('http://127.0.0.1:8000/api/addQuestion', {
@@ -83,6 +110,8 @@ const AddQuestion = () => {
             });
     };
 
+    const isSubmitDisabled = !selectedCategory || !selectedDifficulty;
+
     return (
         <Card style={{ width: '50rem' }}>
             <Card.Body>
@@ -98,7 +127,12 @@ const AddQuestion = () => {
                             name="question"
                             value={formData.question}
                             onChange={handleInputChange}
+                            required
+                            isInvalid={!!fieldErrors.question}
                         />
+                        <Form.Control.Feedback type="invalid">
+                            {fieldErrors.question}
+                        </Form.Control.Feedback>
                     </Form.Group>
                     <CategoryFormContribute onSelectCategory={handleCategorySelect} />
                     <DifficultyForm onSelectDifficulty={handleDifficultySelect} />
@@ -109,8 +143,12 @@ const AddQuestion = () => {
                             name="answer_1"
                             value={formData.answer_1}
                             onChange={handleInputChange}
-                            className="mt-3"
+                            required
+                            isInvalid={!!fieldErrors.answer_1}
                         />
+                        <Form.Control.Feedback type="invalid">
+                            {fieldErrors.answer_1}
+                        </Form.Control.Feedback>
                         <Form.Check
                             type="checkbox"
                             name="answer_1_is_true"
@@ -127,8 +165,12 @@ const AddQuestion = () => {
                             name="answer_2"
                             value={formData.answer_2}
                             onChange={handleInputChange}
-                            className="mt-3"
+                            required
+                            isInvalid={!!fieldErrors.answer_2}
                         />
+                        <Form.Control.Feedback type="invalid">
+                            {fieldErrors.answer_2}
+                        </Form.Control.Feedback>
                         <Form.Check
                             type="checkbox"
                             name="answer_2_is_true"
@@ -145,8 +187,12 @@ const AddQuestion = () => {
                             name="answer_3"
                             value={formData.answer_3}
                             onChange={handleInputChange}
-                            className="mt-3"
+                            required
+                            isInvalid={!!fieldErrors.answer_3}
                         />
+                        <Form.Control.Feedback type="invalid">
+                            {fieldErrors.answer_3}
+                        </Form.Control.Feedback>
                         <Form.Check
                             type="checkbox"
                             name="answer_3_is_true"
@@ -163,8 +209,12 @@ const AddQuestion = () => {
                             name="answer_4"
                             value={formData.answer_4}
                             onChange={handleInputChange}
-                            className="mt-3"
+                            required
+                            isInvalid={!!fieldErrors.answer_4}
                         />
+                        <Form.Control.Feedback type="invalid">
+                            {fieldErrors.answer_4}
+                        </Form.Control.Feedback>
                         <Form.Check
                             type="checkbox"
                             name="answer_4_is_true"
@@ -175,7 +225,7 @@ const AddQuestion = () => {
                         />
                     </Form.Group>
                     {/* Add other form fields for category_id, difficulty_id, answer_* and answer_*_is_true */}
-                    <Button variant="primary" type="submit" className="mt-3">
+                    <Button variant="primary" type="submit" className="mt-3" disabled={isSubmitDisabled}>
                         Submit
                     </Button>
                 </Form>
