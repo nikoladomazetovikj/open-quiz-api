@@ -41,10 +41,23 @@ const AddQuestion = () => {
         const { name, value, type, checked } = event.target;
         const inputValue = type === 'checkbox' ? checked : value;
 
-        setFormData((prevFormData) => ({
-            ...prevFormData,
-            [name]: inputValue,
-        }));
+        if (type === 'checkbox') {
+            const updatedFormData = { ...formData };
+            // Set all answer_*_is_true properties to false
+            Object.keys(updatedFormData).forEach((key) => {
+                if (key.startsWith('answer_') && key.endsWith('_is_true')) {
+                    updatedFormData[key] = false;
+                }
+            });
+            // Set the selected checkbox to true
+            updatedFormData[name] = inputValue;
+            setFormData(updatedFormData);
+        } else {
+            setFormData((prevFormData) => ({
+                ...prevFormData,
+                [name]: inputValue,
+            }));
+        }
     };
 
     const handleSubmit = (event) => {
