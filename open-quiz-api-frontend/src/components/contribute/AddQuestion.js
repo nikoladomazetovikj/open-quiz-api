@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import {Form, Button, Card} from 'react-bootstrap';
 import DifficultyForm from '@/components/home/DifficultyForm';
-import CategoryForm from '@/components/home/CategoryForm';
-import QuestionSelectForm from "@/components/home/QuestionSelectForm";
+import CategoryFormContribute from "@/components/contribute/CategoryFormContribute";
 
 const AddQuestion = () => {
     const [formData, setFormData] = useState({
@@ -87,7 +86,7 @@ const AddQuestion = () => {
                     value={formData.question}
                     onChange={handleInputChange}
                 />
-                <CategoryForm onSelectCategory={handleCategorySelect} />
+                <CategoryFormContribute onSelectCategory={handleCategorySelect} />
                 <DifficultyForm onSelectDifficulty={handleDifficultySelect} />
             </Form.Group>
 
