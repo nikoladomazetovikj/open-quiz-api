@@ -99,54 +99,6 @@
 				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
 			},
 			"response": []
-		},
-		{
-			"name": "Delete data",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Successful DELETE request\", function () {",
-							"    pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);",
-							"});",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"id": "50192414-3086-4b84-ba5b-dcf76b4d2b50",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{base_url}}/info?id=1",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"info"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "1"
-						}
-					]
-				},
-				"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
-			},
-			"response": []
 		}
 	],
 	"event": [
@@ -173,13 +125,13 @@
 	],
 	"variable": [
 		{
-			"id": "59fb959f-2b86-4ebf-a730-e00381de5b75",
+			"id": "8df8b1a6-2374-4a8e-ac91-33611d1ecb41",
 			"key": "id",
 			"value": "1",
 			"disabled": true
 		},
 		{
-			"id": "97caa356-35cb-4a32-88e7-014ff67903e3",
+			"id": "628935eb-dd34-455b-ae9a-73f84deced5e",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
