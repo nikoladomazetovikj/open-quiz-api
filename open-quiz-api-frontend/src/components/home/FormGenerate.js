@@ -1,6 +1,26 @@
 import {Button, Card, Col, Form, Row} from "react-bootstrap";
+import {useEffect, useState} from "react";
+import Axios from 'axios';
 
 const FormGenerate  = () => {
+
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        getCategory();
+    }, []);
+
+    const getCategory = () => {
+        Axios
+            .get('http://127.0.0.1:8000/api/allCategories')
+            .then((res) => {
+                setCategories(res.data.data);
+            })
+            .catch((error) => {
+                console.error('Error fetching categories:', error);
+            });
+    }
+
     return (
         <Row className="justify-content-center">
             <Col xs="auto" className="my-3">
@@ -12,8 +32,11 @@ const FormGenerate  = () => {
                             <Form.Group controlId="formCategory" className="mt-3">
                                 <Form.Label>Select Category:</Form.Label>
                                 <Form.Control as="select">
-                                    <option>All</option>
-                                    <option>Others</option>
+                                    <option key="all">All</option>
+                                    {categories &&
+                                        categories.map((category) => (
+                                            <option key={category.id}>{category.name}</option>
+                                        ))}
                                 </Form.Control>
                             </Form.Group>
 
