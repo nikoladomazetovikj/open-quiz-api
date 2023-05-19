@@ -30,6 +30,9 @@ const FormGenerate  = () => {
 
     };
 
+    const isFormIncomplete = !selectedCategory || !selectedDifficulty || !selectedQuestion;
+
+
     return (
         <Row className="justify-content-center">
             <Col xs="auto" className="my-3">
@@ -41,7 +44,7 @@ const FormGenerate  = () => {
                             <CategoryForm onSelectCategory={handleCategorySelect} />
                             <QuestionSelectForm onSelectQuestion={handleQuestionSelect} />
                             <DifficultyForm onSelectDifficulty={handleDifficultySelect} />
-                            <Button variant="primary" type="submit" className="mt-3" onClick={handleSubmit}>
+                            <Button variant="primary" type="submit" className="mt-3" onClick={handleSubmit} disabled={isFormIncomplete}>
                                 Generate Link
                             </Button>
                         </Form>
