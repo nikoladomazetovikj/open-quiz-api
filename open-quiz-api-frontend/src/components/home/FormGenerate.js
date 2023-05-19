@@ -1,25 +1,23 @@
 import {Button, Card, Col, Form, Row} from "react-bootstrap";
-import {useEffect, useState} from "react";
-import Axios from 'axios';
+import {useState} from "react";
+import CategoryForm from "@/components/home/CategoryForm";
 
 const FormGenerate  = () => {
 
-    const [categories, setCategories] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState('');
 
-    useEffect(() => {
-        getCategory();
-    }, []);
+    const handleCategorySelect = (category) => {
+        setSelectedCategory(category);
+    };
 
-    const getCategory = () => {
-        Axios
-            .get('http://127.0.0.1:8000/api/allCategories')
-            .then((res) => {
-                setCategories(res.data.data);
-            })
-            .catch((error) => {
-                console.error('Error fetching categories:', error);
-            });
-    }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Perform the desired action with the selected category
+        console.log('Selected Category:', selectedCategory);
+
+        // Reset the selected category
+        setSelectedCategory('');
+    };
 
     return (
         <Row className="justify-content-center">
@@ -29,32 +27,14 @@ const FormGenerate  = () => {
                         <Card.Title>Generate API</Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">Please select from the form items</Card.Subtitle>
                         <Form>
-                            <Form.Group controlId="formCategory" className="mt-3">
-                                <Form.Label>Select Category:</Form.Label>
-                                <Form.Control as="select">
-                                    <option key="all">All</option>
-                                    {categories &&
-                                        categories.map((category) => (
-                                            <option key={category.id}>{category.name}</option>
-                                        ))}
-                                </Form.Control>
-                            </Form.Group>
-
+                            <CategoryForm onSelectCategory={handleCategorySelect} />
                             <Form.Group controlId="formNumQuestions" className="mt-3">
                                 <Form.Label>Select Number of Questions:</Form.Label>
                                 <Form.Control as="select">
-                                    <option>5</option>
-                                    <option>10</option>
-                                    <option>15</option>
-                                    <option>20</option>
-                                </Form.Control>
-                            </Form.Group>
-
-                            <Form.Group controlId="formAnyCategory" className="mt-3">
-                                <Form.Label>Select Category:</Form.Label>
-                                <Form.Control as="select">
-                                    <option>Any</option>
-                                    <option>Other</option>
+                                    <option key="5">5</option>
+                                    <option key="10">10</option>
+                                    <option key="15">15</option>
+                                    <option key="20">20</option>
                                 </Form.Control>
                             </Form.Group>
 
@@ -66,7 +46,7 @@ const FormGenerate  = () => {
                                     <option>Hard</option>
                                 </Form.Control>
                             </Form.Group>
-                            <Button variant="primary" type="submit" className="mt-3">
+                            <Button variant="primary" type="submit" className="mt-3" onClick={handleSubmit}>
                                 Generate Link
                             </Button>
                         </Form>
