@@ -42,6 +42,31 @@
 			"response": []
 		},
 		{
+			"name": "List Difficulties",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b23c3748-5c17-4134-8c20-eb8ebf33b05e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b0a1079e-35a3-4594-980e-c7159a4263fa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/api/allCategories",
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
 			"name": "Post data",
 			"event": [
 				{
@@ -196,13 +221,13 @@
 	],
 	"variable": [
 		{
-			"id": "41aa2c01-fce8-490b-8916-8c736547c721",
+			"id": "821952d5-8314-4912-b66b-0c6c53970a69",
 			"key": "id",
 			"value": "1",
 			"disabled": true
 		},
 		{
-			"id": "dca03959-6792-4364-870b-69fb454200de",
+			"id": "52e168d9-a5f5-4017-a975-3d77fcb53efe",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
