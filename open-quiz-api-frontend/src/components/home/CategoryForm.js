@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
 import {Form} from "react-bootstrap";
+import {capitalizeFirstLetter} from "@/helpers/capitalizeFirstLetter";
 
 const CategoryForm = ({ onSelectCategory }) => {
     const [categories, setCategories] = useState([]);
@@ -36,7 +37,7 @@ const CategoryForm = ({ onSelectCategory }) => {
                 {categories &&
                     categories.map((category) => (
                         <option key={category.id} value={category.id}>
-                            {category.name}
+                            {capitalizeFirstLetter(category.name)}
                         </option>
                     ))}
             </Form.Control>

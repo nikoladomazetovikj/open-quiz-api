@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
 import {Form} from "react-bootstrap";
+import {capitalizeFirstLetter} from "@/helpers/capitalizeFirstLetter";
 
 const DifficultyForm = ({ onSelectDifficulty }) => {
     const [difficulties, setDifficulties] = useState([]);
@@ -35,7 +36,7 @@ const DifficultyForm = ({ onSelectDifficulty }) => {
                 {difficulties &&
                     difficulties.map((difficulty) => (
                         <option key={difficulty.id} value={difficulty.id}>
-                            {difficulty.name}
+                            {capitalizeFirstLetter(difficulty.name)}
                         </option>
                     ))}
             </Form.Control>
