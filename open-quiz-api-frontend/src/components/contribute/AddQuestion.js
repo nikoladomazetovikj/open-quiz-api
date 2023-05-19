@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import {Form, Button, Card} from 'react-bootstrap';
 import DifficultyForm from '@/components/home/DifficultyForm';
 import CategoryForm from '@/components/home/CategoryForm';
+import QuestionSelectForm from "@/components/home/QuestionSelectForm";
 
 const AddQuestion = () => {
     const [formData, setFormData] = useState({
@@ -73,7 +74,11 @@ const AddQuestion = () => {
     };
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Card style={{ width: '50rem' }}>
+        <Card.Body>
+            <Card.Title>Add Question</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">Please select from the form items</Card.Subtitle>
+             <Form onSubmit={handleSubmit}>
             <Form.Group controlId="question">
                 <Form.Label>Question</Form.Label>
                 <Form.Control
@@ -92,6 +97,8 @@ const AddQuestion = () => {
                 Submit
             </Button>
         </Form>
+        </Card.Body>
+        </Card>
     );
 };
 
