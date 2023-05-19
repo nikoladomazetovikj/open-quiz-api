@@ -20,11 +20,7 @@ const FormGenerate  = () => {
         // Perform the desired action with the selected category
         console.log('Selected Category:', selectedCategory);
         console.log('Selected Difficulty', selectedDifficulty);
-        // Reset the selected category
-        setSelectedCategory('');
 
-        // Reset selected difficulty
-        setSelectedDifficulty('');
     };
 
     return (
