@@ -22,6 +22,7 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "b23c3748-5c17-4134-8c20-eb8ebf33b05e",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -35,21 +36,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{base_url}}/info?id=1",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"info"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "1"
-						}
-					]
-				},
+				"url": "{{base_url}}/api/allCategories",
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
 			},
 			"response": []
@@ -209,13 +196,13 @@
 	],
 	"variable": [
 		{
-			"id": "6597eb65-64c8-4bc0-a0b9-4b4643b33b52",
+			"id": "41aa2c01-fce8-490b-8916-8c736547c721",
 			"key": "id",
 			"value": "1",
 			"disabled": true
 		},
 		{
-			"id": "2f348c88-c656-4d5b-9782-aea9fb0c5ee5",
+			"id": "dca03959-6792-4364-870b-69fb454200de",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
