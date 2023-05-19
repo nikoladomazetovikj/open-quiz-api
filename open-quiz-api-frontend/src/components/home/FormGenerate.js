@@ -1,22 +1,30 @@
 import {Button, Card, Col, Form, Row} from "react-bootstrap";
 import {useState} from "react";
 import CategoryForm from "@/components/home/CategoryForm";
+import DifficultyForm from "@/components/home/DifficultyForm";
 
 const FormGenerate  = () => {
 
     const [selectedCategory, setSelectedCategory] = useState('');
+    const [selectedDifficulty, setSelectedDifficulty] = useState('');
 
     const handleCategorySelect = (category) => {
         setSelectedCategory(category);
+    };
+    const handleDifficultySelect = (difficulty) => {
+        setSelectedDifficulty(difficulty);
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         // Perform the desired action with the selected category
         console.log('Selected Category:', selectedCategory);
-
+        console.log('Selected Difficulty', selectedDifficulty);
         // Reset the selected category
         setSelectedCategory('');
+
+        // Reset selected difficulty
+        setSelectedDifficulty('');
     };
 
     return (
@@ -37,15 +45,7 @@ const FormGenerate  = () => {
                                     <option key="20">20</option>
                                 </Form.Control>
                             </Form.Group>
-
-                            <Form.Group controlId="formDifficulty" className="mt-3">
-                                <Form.Label>Select Difficulty:</Form.Label>
-                                <Form.Control as="select">
-                                    <option>Easy</option>
-                                    <option>Medium</option>
-                                    <option>Hard</option>
-                                </Form.Control>
-                            </Form.Group>
+                            <DifficultyForm onSelectDifficulty={handleDifficultySelect} />
                             <Button variant="primary" type="submit" className="mt-3" onClick={handleSubmit}>
                                 Generate Link
                             </Button>
