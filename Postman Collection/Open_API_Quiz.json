@@ -61,7 +61,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{base_url}}/api/allCategories",
+				"url": "{{base_url}}/api/allDifficulties",
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
 			},
 			"response": []
@@ -221,13 +221,13 @@
 	],
 	"variable": [
 		{
-			"id": "821952d5-8314-4912-b66b-0c6c53970a69",
+			"id": "970937f7-1b61-4fcd-aceb-b3240e33a3a8",
 			"key": "id",
 			"value": "1",
 			"disabled": true
 		},
 		{
-			"id": "52e168d9-a5f5-4017-a975-3d77fcb53efe",
+			"id": "c00a8a94-4409-44f7-877e-47f49ac55505",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
