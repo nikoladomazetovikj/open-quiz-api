@@ -17,7 +17,7 @@
 			"id": "e7a38a9a-c8e6-49f4-8174-8fe1ac4117fa"
 		},
 		{
-			"name": "Get data",
+			"name": "List Categories",
 			"event": [
 				{
 					"listen": "test",
@@ -207,12 +207,12 @@
 	],
 	"variable": [
 		{
-			"id": "d24327fe-4e65-4725-a047-842ba34eb304",
+			"id": "9b3f8e74-e85c-47c5-9416-e3d73f169762",
 			"key": "id",
 			"value": "1"
 		},
 		{
-			"id": "33338df9-96e3-4bd7-9393-1877e4446bf1",
+			"id": "bebf05e8-acb3-45a6-b08c-5acf65bc5e92",
 			"key": "base_url",
 			"value": "https://postman-rest-api-learner.glitch.me/"
 		}
