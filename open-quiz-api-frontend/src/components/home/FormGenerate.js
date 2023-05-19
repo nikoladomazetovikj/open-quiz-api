@@ -35,6 +35,7 @@ const FormGenerate  = () => {
                             <Form.Group controlId="formNumQuestions" className="mt-3">
                                 <Form.Label>Select Number of Questions:</Form.Label>
                                 <Form.Control as="select">
+                                    <option value="">-- Select Difficulty --</option>
                                     <option key="5">5</option>
                                     <option key="10">10</option>
                                     <option key="15">15</option>

@@ -31,6 +31,7 @@ const DifficultyForm = ({ onSelectDifficulty }) => {
             <Form.Label>Select Difficulty:</Form.Label>
             {/* eslint-disable-next-line react/jsx-no-undef */}
             <Form.Control as="select" onChange={handleDifficultyChange}>
+                <option value="">-- Select Difficulty --</option>
                 {difficulties &&
                     difficulties.map((difficulty) => (
                         <option key={difficulty.id} value={difficulty.id}>

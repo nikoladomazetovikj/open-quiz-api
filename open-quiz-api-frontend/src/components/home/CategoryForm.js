@@ -31,6 +31,7 @@ const CategoryForm = ({ onSelectCategory }) => {
             <Form.Label>Select Category:</Form.Label>
             {/* eslint-disable-next-line react/jsx-no-undef */}
             <Form.Control as="select" onChange={handleCategoryChange}>
+                <option value="">-- Select Category --</option>
                 <option key="all" value="all">All</option>
                 {categories &&
                     categories.map((category) => (
