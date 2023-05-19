@@ -67,7 +67,7 @@
 			"response": []
 		},
 		{
-			"name": "Post data",
+			"name": "Add Question",
 			"event": [
 				{
 					"listen": "test",
@@ -221,13 +221,13 @@
 	],
 	"variable": [
 		{
-			"id": "970937f7-1b61-4fcd-aceb-b3240e33a3a8",
+			"id": "5b07d857-5ddf-4a48-bed6-2df065a7af41",
 			"key": "id",
 			"value": "1",
 			"disabled": true
 		},
 		{
-			"id": "c00a8a94-4409-44f7-877e-47f49ac55505",
+			"id": "e81f0951-1f7b-4679-9e4d-fd105ea6092c",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
