@@ -28,7 +28,7 @@ class QuestionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(QuestionRequest $request)
+    public function store(Request $request)
     {
         $question = Question::create([
             'question' => $request->question,
@@ -48,8 +48,9 @@ class QuestionController extends Controller
             'question_id' => $question->id
         ]);
 
+        $res = Question::with('answers')->where('id', $question->id);
 
-        return new QuestionResource($question);
+        return QuestionResource::collection($res->get());
     }
 
     /**
