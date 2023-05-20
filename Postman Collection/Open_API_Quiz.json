@@ -83,16 +83,17 @@
 						}
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearer}}"
+							}
+						},
 						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
 								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{bearer}}",
 								"type": "text"
 							}
 						],
@@ -213,12 +214,12 @@
 	],
 	"variable": [
 		{
-			"id": "82010105-e624-425f-8df8-0a758dcacac3",
+			"id": "f7f09cd7-423a-4641-9b71-0a968ae78ecb",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "7e243224-bc2b-49aa-a72f-ecd3229ac7f4",
+			"id": "ef7c7ddf-c911-4f94-836d-5154c30a8ea1",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
