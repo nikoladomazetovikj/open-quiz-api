@@ -44,7 +44,7 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/api/addQuestion",
+						"url": "{{base_url}}/api/login",
 						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
 					},
 					"response": []
@@ -162,13 +162,13 @@
 	],
 	"variable": [
 		{
-			"id": "a00cfc2a-ccc9-4baf-bda0-1d5014b41d13",
+			"id": "47743ef2-1f98-4786-9d8d-6422cb08262b",
 			"key": "id",
 			"value": "1",
 			"disabled": true
 		},
 		{
-			"id": "15c39672-9f57-4a72-8cbf-b7a3a38e3e4c",
+			"id": "433b6bc2-da75-442f-ad13-e0356c5c36e6",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
