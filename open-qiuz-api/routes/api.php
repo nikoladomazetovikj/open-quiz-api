@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/logout', [\App\Http\Controllers\Api\AuthController::class, 'logout']);
     Route::apiResources([
         'categories' => \App\Http\Controllers\Api\CategoryController::class,
         'difficulties' => \App\Http\Controllers\Api\DifficultyController::class,
@@ -27,4 +28,5 @@ Route::get('allCategories', [\App\Http\Controllers\Api\CategoryController::class
 Route::get('allDifficulties', [\App\Http\Controllers\Api\DifficultyController::class, 'index']);
 Route::get('quizQuestions/{categoryId}/{difficultyId}', [\App\Http\Controllers\Api\QuestionController::class, 'index']);
 Route::post('addQuestion', [\App\Http\Controllers\Api\QuestionController::class, 'store']);
+Route::post('/login', [\App\Http\Controllers\Api\AuthController::class, 'login']);
 
