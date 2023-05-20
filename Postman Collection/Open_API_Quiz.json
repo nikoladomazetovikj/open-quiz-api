@@ -166,15 +166,20 @@
 	],
 	"variable": [
 		{
-			"id": "ca745e82-1e41-4ac5-abee-0bb7276f2240",
+			"id": "5352e220-b47e-4e0a-b510-1b9c2dcafc62",
 			"key": "id",
 			"value": "1",
 			"disabled": true
 		},
 		{
-			"id": "47046cfa-65f3-418d-84b7-e24736285e50",
+			"id": "31882f2e-f1d6-444d-bebe-4f1ed193a750",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
+		},
+		{
+			"id": "d640e82b-6f17-494e-85d2-51163b523f11",
+			"key": "bearer",
+			"value": ""
 		}
 	]
 }
