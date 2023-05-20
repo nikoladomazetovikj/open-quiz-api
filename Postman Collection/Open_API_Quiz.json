@@ -15,7 +15,7 @@
 			"name": "Admin",
 			"item": [
 				{
-					"name": "Login Copy",
+					"name": "Login",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -186,12 +186,12 @@
 	],
 	"variable": [
 		{
-			"id": "1acaa476-617b-4526-996c-07e9777b584a",
+			"id": "c48c0158-cfd2-4b26-b627-99dbd57c31bc",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "317c2c66-bfc0-407b-a662-43d5b6b4e932",
+			"id": "a3f8b768-a08c-42a7-86c7-5857eff3c70e",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
