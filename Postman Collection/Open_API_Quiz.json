@@ -146,7 +146,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8cf3467b-0817-4112-a8e6-5cd1b7b3d955",
+				"id": "28ccb182-0c71-4eb2-84f6-2a71db411c14",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -156,7 +156,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e8f4f125-b990-46dd-ba60-5ff78625c6bb",
+				"id": "8a397210-48d1-4780-810d-6aa71492c9fc",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -166,20 +166,14 @@
 	],
 	"variable": [
 		{
-			"id": "5352e220-b47e-4e0a-b510-1b9c2dcafc62",
-			"key": "id",
-			"value": "1",
-			"disabled": true
+			"id": "2502999a-42e7-43db-a55b-ba1454b6b9eb",
+			"key": "bearer",
+			"value": "any"
 		},
 		{
-			"id": "31882f2e-f1d6-444d-bebe-4f1ed193a750",
+			"id": "7a86adcb-05c7-4b0a-9dcc-7c1b663ca479",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
-		},
-		{
-			"id": "d640e82b-6f17-494e-85d2-51163b523f11",
-			"key": "bearer",
-			"value": ""
 		}
 	]
 }
