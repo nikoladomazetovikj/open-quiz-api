@@ -1,13 +1,40 @@
-import { Button, Card, Form } from "react-bootstrap";
-import React, { useState } from "react";
+import { useState } from "react";
+import { useRouter } from "next/router";
+import { Card, Form, Button } from "react-bootstrap";
+import Cookies from "js-cookie";
 
 const LoginForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const router = useRouter();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Perform login logic here
+
+        try {
+            const response = await fetch("http://127.0.0.1:8000/api/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (response.ok) {
+                const { token } = await response.json();
+                // Store the token in a cookie
+                Cookies.set("token", token, { expires: 7, path: "/" });
+
+                // Redirect to the dashboard page
+                await router.push("admin/dashboard");
+            } else {
+                // Handle the case when login request fails
+                // Example: Show an error message
+            }
+        } catch (error) {
+            // Handle network or server errors
+            console.error("Error:", error);
+        }
     };
 
     return (
@@ -26,7 +53,7 @@ const LoginForm = () => {
                         />
                     </Form.Group>
 
-                    <Form.Group controlId="formPassword"  className="mt-3">
+                    <Form.Group controlId="formPassword" className="mt-3">
                         <Form.Label>Password</Form.Label>
                         <Form.Control
                             type="password"
