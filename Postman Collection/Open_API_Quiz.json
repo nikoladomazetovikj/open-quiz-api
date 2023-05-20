@@ -62,7 +62,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" : \"yundt.stella@muller.com\",\r\n    \"password\" : \"123456789\"\r\n}",
+							"raw": "{\r\n    \"email\" : \"admin@quiz.test\",\r\n    \"password\" : \"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -186,12 +186,12 @@
 	],
 	"variable": [
 		{
-			"id": "813c2e80-9c4c-4234-a306-48cfab8a7198",
+			"id": "d4da1586-76de-486c-a1f7-032065bf626e",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "5371d511-9ac0-4712-b089-9b6badfe7b63",
+			"id": "cf8cb1e2-0d70-438c-9939-db028c9a6984",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
