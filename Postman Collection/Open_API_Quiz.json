@@ -62,7 +62,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" : \"admin@quiz.test\",\r\n    \"password\" : \"12345678\"\r\n}",
+							"raw": "{\r\n    \"email\" : \"admin@quiz.tes\",\r\n    \"password\" : \"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -208,12 +208,12 @@
 	],
 	"variable": [
 		{
-			"id": "e7a80206-b9e3-4085-ac05-1dde3a62f929",
+			"id": "645926f0-e36f-49dd-9d09-511ba20ece0a",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "1fc8bc1c-c205-46c5-9cd5-288a4174d027",
+			"id": "f82faa1e-8468-4b26-b65c-5131bef82327",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
