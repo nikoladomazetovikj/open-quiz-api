@@ -22,10 +22,8 @@
 							"script": {
 								"id": "d76effee-14f2-492e-8ffd-1f092900ef20",
 								"exec": [
-									"pm.test(\"Successful POST request\", function () {",
-									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
-									"});",
-									""
+									"const responseJson = pm.response.json();",
+									"pm.collectionVariables.set('bearer', responseJson.token)"
 								],
 								"type": "text/javascript"
 							}
@@ -33,11 +31,17 @@
 					],
 					"id": "a7ee98a6-ec8b-46e1-a58f-06cb68bacd41",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearer}}"
+							}
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"question\": \"Test Question\",\n  \"category_id\": 1,\n  \"difficulty_id\": 2,\n  \"answer_1\": \"Answer 1\",\n  \"answer_2\": \"Answer 2\",\n  \"answer_3\": \"Answer 3\",\n  \"answer_4\": \"Answer 4\",\n  \"answer_1_is_true\": true,\n  \"answer_2_is_true\": true,\n  \"answer_3_is_true\": false,\n  \"answer_4_is_true\": false\n}",
+							"raw": "{\n  \"email\": \"admin@quiz.test\",\n  \"password\" : \"12345678\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -162,13 +166,13 @@
 	],
 	"variable": [
 		{
-			"id": "47743ef2-1f98-4786-9d8d-6422cb08262b",
+			"id": "ca745e82-1e41-4ac5-abee-0bb7276f2240",
 			"key": "id",
 			"value": "1",
 			"disabled": true
 		},
 		{
-			"id": "433b6bc2-da75-442f-ad13-e0356c5c36e6",
+			"id": "47046cfa-65f3-418d-84b7-e24736285e50",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
