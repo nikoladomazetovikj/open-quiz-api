@@ -72,6 +72,28 @@
 						"url": "{{base_url}}/api/login"
 					},
 					"response": []
+				},
+				{
+					"name": "Logout",
+					"id": "b9d4ee77-2aac-4a5a-889f-f8f942ab5cdb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{host}}api/logout"
+					},
+					"response": []
 				}
 			],
 			"id": "e7a38a9a-c8e6-49f4-8174-8fe1ac4117fa"
@@ -186,12 +208,12 @@
 	],
 	"variable": [
 		{
-			"id": "e9888ddb-913c-4240-9512-f23b1c99bd9d",
+			"id": "b3dd50a3-9c82-46a2-81a7-052ddf6ad482",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "afe7c435-4182-4b26-9276-6670764afb28",
+			"id": "a8a937b3-4410-401e-809a-84b6de411c23",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
