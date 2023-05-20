@@ -91,7 +91,7 @@
 								"type": "text"
 							}
 						],
-						"url": "{{host}}api/logout"
+						"url": "{{base_url}}/api/logout"
 					},
 					"response": []
 				}
@@ -208,12 +208,12 @@
 	],
 	"variable": [
 		{
-			"id": "b3dd50a3-9c82-46a2-81a7-052ddf6ad482",
+			"id": "e7a80206-b9e3-4085-ac05-1dde3a62f929",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "a8a937b3-4410-401e-809a-84b6de411c23",
+			"id": "1fc8bc1c-c205-46c5-9cd5-288a4174d027",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
