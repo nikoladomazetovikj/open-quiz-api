@@ -15,41 +15,61 @@
 			"name": "Admin",
 			"item": [
 				{
-					"name": "Login",
+					"name": "Login Copy",
 					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c9714817-9c86-4b00-baa5-62d4240d0b7a",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
 						{
 							"listen": "test",
 							"script": {
-								"id": "d76effee-14f2-492e-8ffd-1f092900ef20",
+								"id": "12f62f01-9486-4bcc-9a58-bfebdbee4cc4",
 								"exec": [
-									"const responseJson = pm.response.json();",
-									"pm.collectionVariables.set('bearer', responseJson.token)"
+									"const responseJson = pm.response.json();\r",
+									"pm.collectionVariables.set('bearer', responseJson.token)\r",
+									""
 								],
 								"type": "text/javascript"
 							}
 						}
 					],
-					"id": "a7ee98a6-ec8b-46e1-a58f-06cb68bacd41",
+					"id": "135cda4c-f157-4303-9ad6-2bfaee2c102f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						},
+						"disableCookies": true
+					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearer}}"
-							}
+							"type": "noauth"
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"admin@quiz.test\",\n  \"password\" : \"12345678\"\n}",
+							"raw": "{\r\n    \"email\" : \"yundt.stella@muller.com\",\r\n    \"password\" : \"123456789\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{base_url}}/api/login",
-						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+						"url": "{{host}}api/login"
 					},
 					"response": []
 				}
@@ -166,12 +186,12 @@
 	],
 	"variable": [
 		{
-			"id": "2502999a-42e7-43db-a55b-ba1454b6b9eb",
+			"id": "1acaa476-617b-4526-996c-07e9777b584a",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "7a86adcb-05c7-4b0a-9dcc-7c1b663ca479",
+			"id": "317c2c66-bfc0-407b-a662-43d5b6b4e932",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
