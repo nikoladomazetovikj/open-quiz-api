@@ -13,7 +13,7 @@ const AdminHeader = props => {
                         <Nav.Link href="/contribute">Add Question</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="admin/logout" className="me-2">Logout</Nav.Link>
+                        <Nav.Link href="/admin/logout" className="me-2">Logout</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
