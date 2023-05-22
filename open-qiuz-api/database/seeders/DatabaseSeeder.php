@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             DifficultySeeder::class,
             AdminSeeder::class,
             SportQuestionsSeeder::class,
-            HistoryQuestionsSeeder::class
+            HistoryQuestionsSeeder::class,
+            PoliticQuestionsSeeder::class
         ]);
     }
 }
