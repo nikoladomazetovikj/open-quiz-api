@@ -10,7 +10,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 
-class PoliticQuestionsSeeder extends Seeder
+class AnimalQuestionsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,7 +19,7 @@ class PoliticQuestionsSeeder extends Seeder
     {
         $response = Http::get('https://opentdb.com/api.php', [
             'amount' => 10,
-            'category' => 24,
+            'category' => 27,
             'type' => 'multiple',
         ]);
 
@@ -48,7 +48,7 @@ class PoliticQuestionsSeeder extends Seeder
                 $questionId = DB::table('questions')->insertGetId([
                     'question' => $question['question'],
                     'difficulty_id' => $difficulty,
-                    'category_id' => Category::POLITICS->value,
+                    'category_id' => Category::ANIMALS->value,
                     'is_approved' => true,
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
