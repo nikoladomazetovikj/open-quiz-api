@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             SportQuestionsSeeder::class,
             HistoryQuestionsSeeder::class,
             PoliticQuestionsSeeder::class,
-            AnimalQuestionsSeeder::class
+            AnimalQuestionsSeeder::class,
+            MusicQuestionsSeeder::class
         ]);
     }
 }
