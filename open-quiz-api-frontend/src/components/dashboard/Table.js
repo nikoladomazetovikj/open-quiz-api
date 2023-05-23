@@ -61,8 +61,8 @@ class TableComponent extends React.Component {
                         <th>Category</th>
                         <th>Difficulty</th>
                         <th>Answers</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
