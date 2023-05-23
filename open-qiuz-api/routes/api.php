@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/logout', [\App\Http\Controllers\Api\AuthController::class, 'logout']);
-    Route::get('/questions/{categoryId}/{difficultyId}/{limit}', [\App\Http\Controllers\Api\QuestionController::class,
+    Route::get('/questions/{categoryId}/{difficultyId}', [\App\Http\Controllers\Api\QuestionController::class,
         'index']);
     Route::apiResources([
         'categories' => \App\Http\Controllers\Api\CategoryController::class,

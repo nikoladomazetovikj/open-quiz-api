@@ -14,6 +14,40 @@ class AnswerResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        $correctAnswer = $this->getCorrectAnswer();
+        $incorrectAnswers = $this->getIncorrectAnswers();
+
+        return [
+            'id' => $this->id,
+            'correct_answer' => $correctAnswer,
+            'incorrect_answers' => $incorrectAnswers,
+        ];
+    }
+
+    private function getCorrectAnswer()
+    {
+        $correctAnswer = '';
+        for ($i = 1; $i <= 4; $i++) {
+            $column = 'answer_' . $i;
+            $isTrueColumn = 'answer_' . $i . '_is_true';
+            if ($this->$isTrueColumn) {
+                $correctAnswer = $this->$column;
+                break;
+            }
+        }
+        return $correctAnswer;
+    }
+
+    private function getIncorrectAnswers()
+    {
+        $incorrectAnswers = [];
+        for ($i = 1; $i <= 4; $i++) {
+            $column = 'answer_' . $i;
+            $isTrueColumn = 'answer_' . $i . '_is_true';
+            if (!$this->$isTrueColumn) {
+                $incorrectAnswers[] = $this->$column;
+            }
+        }
+        return $incorrectAnswers;
     }
 }

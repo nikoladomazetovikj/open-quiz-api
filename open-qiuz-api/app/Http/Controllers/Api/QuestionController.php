@@ -15,7 +15,7 @@ class QuestionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($categoryId, $difficultyId, $limit)
+    public function index($categoryId, $difficultyId)
     {
         $query = Question::with('answers', 'difficulties', 'categories')
             ->where('is_approved', true);
@@ -28,9 +28,7 @@ class QuestionController extends Controller
             $query->where('difficulty_id', $difficultyId);
         }
 
-        $questions = $query->inRandomOrder()
-            ->limit($limit)
-            ->get();
+        $questions = $query->paginate(10);
 
         return QuestionResource::collection($questions);
     }
