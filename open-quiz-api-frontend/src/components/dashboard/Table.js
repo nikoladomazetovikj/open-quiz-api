@@ -2,6 +2,7 @@ import React from 'react';
 import {Table, Button, Pagination} from 'react-bootstrap';
 import axios from 'axios';
 import {capitalizeFirstLetter} from "@/helpers/capitalizeFirstLetter";
+import Link from "next/link";
 
 class TableComponent extends React.Component {
     state = {
@@ -105,10 +106,14 @@ class TableComponent extends React.Component {
                                 </ul>
                             </td>
                             <td>
-                                <Button variant="success">Approve</Button>
+                                <Link href={`/admin/approve/${question.id}`}>
+                                    <Button variant="success">Approve</Button>
+                                </Link>
                             </td>
                             <td>
-                                <Button variant="danger">Delete</Button>
+                                <Link href={`/admin/approve/${question.id}`}>
+                                    <Button variant="danger" >Delete</Button>
+                                </Link>
                             </td>
                         </tr>
                     ))}
