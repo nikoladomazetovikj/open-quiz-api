@@ -177,7 +177,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{base_url}}/api/quizQuestions/all/all/10",
+				"url": "{{base_url}}/api/quizQuestions/all/all/20",
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
 			},
 			"response": []
@@ -267,12 +267,12 @@
 	],
 	"variable": [
 		{
-			"id": "ce8ae296-56e2-41de-907f-f2bc68e2fdf3",
+			"id": "df693e92-16a0-4fb5-8dc0-d6ad67b53dfb",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "4e0d2408-4846-418b-91fc-1fe838f13ec2",
+			"id": "8537baf1-599c-45e6-b4e1-8d86959a3cc4",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
