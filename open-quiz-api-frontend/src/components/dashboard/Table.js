@@ -81,7 +81,7 @@ class TableComponent extends React.Component {
                             </ul>
                         </td>
                         <td>
-                            <Button variant="primary">Edit</Button>
+                            <Button variant="success">Approve</Button>
                         </td>
                         <td>
                             <Button variant="danger">Delete</Button>
