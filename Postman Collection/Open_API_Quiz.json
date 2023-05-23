@@ -100,6 +100,34 @@
 						"url": "{{base_url}}/api/logout"
 					},
 					"response": []
+				},
+				{
+					"name": "List Questions",
+					"id": "4eb122c3-37a6-4bfb-b4d8-b35412652a49",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearer}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/api/logout"
+					},
+					"response": []
 				}
 			],
 			"id": "e7a38a9a-c8e6-49f4-8174-8fe1ac4117fa"
@@ -239,12 +267,12 @@
 	],
 	"variable": [
 		{
-			"id": "f1bbfc72-4c43-4cfc-92c2-c3d060e624e2",
+			"id": "c51c62aa-7344-49ed-82c2-a9fffce8685e",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "9c9e7fcd-d60e-45b2-ae65-755af971fd78",
+			"id": "70b186b8-31e9-445b-babe-5cb86c1c9684",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
