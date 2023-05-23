@@ -1,6 +1,7 @@
 import React from 'react';
 import {Table, Button, Pagination} from 'react-bootstrap';
 import axios from 'axios';
+import {capitalizeFirstLetter} from "@/helpers/capitalizeFirstLetter";
 
 class TableComponent extends React.Component {
     state = {
@@ -67,8 +68,8 @@ class TableComponent extends React.Component {
                     {data.map(question => (
                         <tr key={question.id}>
                             <td>{question.question}</td>
-                            <td>{question.category}</td>
-                            <td>{question.difficulty}</td>
+                            <td>{capitalizeFirstLetter(question.category)}</td>
+                            <td>{capitalizeFirstLetter(question.difficulty)}</td>
                             <td>
                                 <ul>
                                     {question.answers.map(answer => (
