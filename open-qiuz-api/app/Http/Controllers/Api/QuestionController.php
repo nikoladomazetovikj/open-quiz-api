@@ -18,7 +18,7 @@ class QuestionController extends Controller
     public function index($categoryId, $difficultyId)
     {
         $query = Question::with('answers', 'difficulties', 'categories')
-            ->where('is_approved', true);
+            ->where('is_approved', false);
 
         if ($categoryId !== 'all') {
             $query->where('category_id', $categoryId);
