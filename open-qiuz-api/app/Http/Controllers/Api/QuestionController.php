@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ApproveQuestionRequest;
+use App\Http\Requests\DeleteQuestionRequest;
 use App\Http\Requests\QuestionRequest;
 use App\Http\Resources\ClientQuestionResource;
 use App\Http\Resources\QuestionResource;
@@ -72,7 +74,7 @@ class QuestionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Question $question)
+    public function update(ApproveQuestionRequest $request, Question $question)
     {
         $question->update(['is_approved' => $request->is_approved]);
 
@@ -82,7 +84,7 @@ class QuestionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Question $question)
+    public function destroy(DeleteQuestionRequest $request, Question $question)
     {
         $question->delete();
 
