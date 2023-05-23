@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\QuestionRequest;
+use App\Http\Resources\ClientQuestionResource;
 use App\Http\Resources\QuestionResource;
 use App\Models\Answer;
 use App\Models\Question;
@@ -14,13 +15,22 @@ class QuestionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($categoryId, $difficultyId)
+    public function index($categoryId, $difficultyId, $limit)
     {
-        $questions = Question::with('answers', 'difficulties', 'categories')
-                            ->where('category_id', $categoryId)
-                            ->where('difficulty_id', $difficultyId)
-                            ->where('is_approved', true)
-                            ->get();
+        $query = Question::with('answers', 'difficulties', 'categories')
+            ->where('is_approved', true);
+
+        if ($categoryId !== 'all') {
+            $query->where('category_id', $categoryId);
+        }
+
+        if ($difficultyId !== 'all') {
+            $query->where('difficulty_id', $difficultyId);
+        }
+
+        $questions = $query->inRandomOrder()
+            ->limit($limit)
+            ->get();
 
         return QuestionResource::collection($questions);
     }
@@ -79,5 +89,25 @@ class QuestionController extends Controller
         $question->delete();
 
         return response()->noContent();
+    }
+
+    public function clientQuestions($categoryId, $difficultyId, $limit)
+    {
+        $query = Question::with('answers', 'difficulties', 'categories')
+            ->where('is_approved', true);
+
+        if ($categoryId !== 'all') {
+            $query->where('category_id', $categoryId);
+        }
+
+        if ($difficultyId !== 'all') {
+            $query->where('difficulty_id', $difficultyId);
+        }
+
+        $questions = $query->inRandomOrder()
+            ->limit($limit)
+            ->get();
+
+        return ClientQuestionResource::collection($questions);
     }
 }
