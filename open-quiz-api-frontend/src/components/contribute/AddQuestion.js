@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Form, Button, Card } from 'react-bootstrap';
+import { Form, Button, Card, Alert } from 'react-bootstrap';
 import DifficultyForm from '@/components/home/DifficultyForm';
 import CategoryFormContribute from '@/components/contribute/CategoryFormContribute';
+import DifficultyFormContribute from "@/components/contribute/DifficultyFormContribute";
 
 const AddQuestion = () => {
     const [formData, setFormData] = useState({
@@ -21,6 +22,7 @@ const AddQuestion = () => {
     const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedDifficulty, setSelectedDifficulty] = useState('');
     const [fieldErrors, setFieldErrors] = useState({});
+    const [successMessage, setSuccessMessage] = useState('');
 
     const handleCategorySelect = (category) => {
         setSelectedCategory(category);
@@ -92,7 +94,6 @@ const AddQuestion = () => {
             return;
         }
 
-
         // Send POST request to /api/addQuestion with formData
         fetch('http://127.0.0.1:8000/api/addQuestion', {
             method: 'POST',
@@ -103,10 +104,25 @@ const AddQuestion = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data); // Handle the response data
+                setFormData({
+                    question: '',
+                    category_id: null,
+                    difficulty_id: null,
+                    answer_1: '',
+                    answer_2: '',
+                    answer_3: '',
+                    answer_4: '',
+                    answer_1_is_true: false,
+                    answer_2_is_true: false,
+                    answer_3_is_true: false,
+                    answer_4_is_true: false,
+                });
+                setFieldErrors({});
+                setSuccessMessage('Question added successfully');
             })
             .catch((error) => {
-                console.error(error); // Handle any errors
+                console.error(error);
+                alert('An error occurred while adding the question.');
             });
     };
 
@@ -119,6 +135,7 @@ const AddQuestion = () => {
                 <Card.Subtitle className="mb-2 text-muted">
                     Please select from the form items
                 </Card.Subtitle>
+                {successMessage && <Alert variant="success">{successMessage}</Alert>}
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="question">
                         <Form.Label>Question</Form.Label>
@@ -135,7 +152,7 @@ const AddQuestion = () => {
                         </Form.Control.Feedback>
                     </Form.Group>
                     <CategoryFormContribute onSelectCategory={handleCategorySelect} />
-                    <DifficultyForm onSelectDifficulty={handleDifficultySelect} />
+                    <DifficultyFormContribute onSelectDifficulty={handleDifficultySelect} />
                     <Form.Group controlId="answer1" className="mt-3">
                         <Form.Label>Answer 1</Form.Label>
                         <Form.Control
@@ -224,8 +241,12 @@ const AddQuestion = () => {
                             className="mt-3"
                         />
                     </Form.Group>
-                    {/* Add other form fields for category_id, difficulty_id, answer_* and answer_*_is_true */}
-                    <Button variant="primary" type="submit" className="mt-3" disabled={isSubmitDisabled}>
+                    <Button
+                        variant="primary"
+                        type="submit"
+                        className="mt-3"
+                        disabled={isSubmitDisabled}
+                    >
                         Submit
                     </Button>
                 </Form>
