@@ -33,15 +33,17 @@ class TableComponent extends React.Component {
             });
     };
 
-    handlePageChange = (page) => {
+    handlePrevClick = () => {
         const { links } = this.state;
-        if (links && links.links) {
-            const url = links.links.find((link) => link.label === page)?.url;
-            if (url) {
-                this.fetchData(url);
-            }
+        if (links && links.prev) {
+            this.fetchData(links.prev);
+        }
+    };
 
-            console.log(links)
+    handleNextClick = () => {
+        const { links } = this.state;
+        if (links && links.next) {
+            this.fetchData(links.next);
         }
     };
 
@@ -113,7 +115,21 @@ class TableComponent extends React.Component {
                 </Table>
 
                 <div className="pagination">
+                    {links && (
+                        <div className="pagination">
+                            {links.prev && (
+                                <Button variant="secondary" onClick={this.handlePrevClick}>
+                                    Previous
+                                </Button>
+                            )}
 
+                            {links.next && (
+                                <Button variant="secondary" onClick={this.handleNextClick}>
+                                    Next
+                                </Button>
+                            )}
+                        </div>
+                    )}
                 </div>
             </>
         );
