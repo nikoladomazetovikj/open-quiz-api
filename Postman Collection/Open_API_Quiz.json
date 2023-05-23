@@ -125,7 +125,7 @@
 								"type": "text"
 							}
 						],
-						"url": "{{base_url}}/api/questions/all/all/10"
+						"url": "{{base_url}}/api/questions/all/all"
 					},
 					"response": []
 				}
@@ -267,12 +267,12 @@
 	],
 	"variable": [
 		{
-			"id": "875e56c1-b055-43a9-a372-411376ecb326",
+			"id": "21665b8c-3e3c-4251-bf0a-871e642f73fd",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "fed93346-33e3-4a98-9736-663173dc6a8a",
+			"id": "a4ae873c-3d2a-4abd-8033-1355213a9c59",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
