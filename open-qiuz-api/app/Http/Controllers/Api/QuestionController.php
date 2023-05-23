@@ -28,7 +28,7 @@ class QuestionController extends Controller
             $query->where('difficulty_id', $difficultyId);
         }
 
-        $questions = $query->paginate(10);
+        $questions = $query->paginate(5);
 
         return QuestionResource::collection($questions);
     }
