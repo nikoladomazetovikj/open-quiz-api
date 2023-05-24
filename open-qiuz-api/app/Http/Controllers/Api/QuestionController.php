@@ -76,7 +76,7 @@ class QuestionController extends Controller
      */
     public function update(ApproveQuestionRequest $request, Question $question)
     {
-        $question->update(['is_approved' => $request->is_approved]);
+        $question->update(['is_approved' => true]);
 
         return new QuestionResource($question);
     }
