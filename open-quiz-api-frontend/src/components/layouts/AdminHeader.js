@@ -10,7 +10,7 @@ const AdminHeader = props => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/">Dashboard</Nav.Link>
-                        <Nav.Link href="/contribute">Add Question</Nav.Link>
+                        <Nav.Link href="/admin/add-question">Add Question</Nav.Link>
                     </Nav>
                     <Nav>
                         <Nav.Link href="/admin/logout" className="me-2">Logout</Nav.Link>
