@@ -32,4 +32,10 @@ Admin has permissions to add, delete or approve question.
  4. Setup Server - https://github.com/nikoladomazetovikj/open-quiz-api.git
  5. Setup Client -  https://github.com/nikoladomazetovikj/open-quiz-api.git
 
+## API Collection 
+ 
+ Bellow you can find and use the API collection in order to test you APIs
+ ```
+ https://github.com/nikoladomazetovikj/open-quiz-api/blob/master/Postman%20Collection/Open_API_Quiz.json
+ ```
 
