@@ -8,7 +8,67 @@
 	"item": [
 		{
 			"name": "Questions",
-			"item": [],
+			"item": [
+				{
+					"name": "Client Add Question",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c9714817-9c86-4b00-baa5-62d4240d0b7a",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "12f62f01-9486-4bcc-9a58-bfebdbee4cc4",
+								"exec": [
+									"const responseJson = pm.response.json();\r",
+									"pm.collectionVariables.set('bearer', responseJson.token)\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "a72fb3a1-80b7-47b0-961b-808a1a6cf2bb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						},
+						"disableCookies": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"admin@quiz.test\",\r\n    \"password\" : \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/login"
+					},
+					"response": []
+				}
+			],
 			"id": "fb06b3a7-b494-44f8-bb85-e13ed7bcba3e"
 		},
 		{
@@ -232,12 +292,12 @@
 	],
 	"variable": [
 		{
-			"id": "f68be09e-d33a-4b27-b373-83dd220e7d47",
+			"id": "e4fa333b-570f-4f80-b8f2-456a5d18136e",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "6b34451c-ddf0-41e6-a5a8-2f822426b962",
+			"id": "6a244328-2f71-4532-a532-8f8126f86234",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
