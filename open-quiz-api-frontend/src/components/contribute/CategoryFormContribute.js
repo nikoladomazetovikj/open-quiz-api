@@ -11,7 +11,7 @@ const CategoryFormContribute = ({ onSelectCategory }) => {
     }, []);
 
     const getCategory = () => {
-        Axios.get('http://127.0.0.1:8000/api/allCategories')
+        Axios.get(`${process.env.BASE_URL}/api/allCategories`)
             .then((res) => {
                 setCategories(res.data.data);
             })

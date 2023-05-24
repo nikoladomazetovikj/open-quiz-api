@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Axios from 'axios';
 import {Form} from "react-bootstrap";
 import {capitalizeFirstLetter} from "@/helpers/capitalizeFirstLetter";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 const DifficultyForm = ({ onSelectDifficulty }) => {
     const [difficulties, setDifficulties] = useState([]);
@@ -11,7 +12,7 @@ const DifficultyForm = ({ onSelectDifficulty }) => {
     }, []);
 
     const getDifficulty = () => {
-        Axios.get('http://127.0.0.1:8000/api/allDifficulties')
+        Axios.get(`${process.env.BASE_URL}/api/allDifficulties`)
             .then((res) => {
                 setDifficulties(res.data.data);
             })

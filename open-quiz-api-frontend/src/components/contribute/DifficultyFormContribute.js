@@ -11,7 +11,7 @@ const DifficultyFormContribute = ({ onSelectDifficulty }) => {
     }, []);
 
     const getDifficulty = () => {
-        Axios.get('http://127.0.0.1:8000/api/allDifficulties')
+        Axios.get(`${process.env.BASE_URL}/api/allDifficulties`)
             .then((res) => {
                 setDifficulties(res.data.data);
             })

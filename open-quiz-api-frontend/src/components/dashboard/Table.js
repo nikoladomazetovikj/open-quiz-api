@@ -63,7 +63,7 @@ class TableComponent extends React.Component {
         };
 
         axios
-            .get(url || 'http://127.0.0.1:8000/api/questions/all/all', config)
+            .get(url || `${process.env.BASE_URL}/api/questions/all/all`, config)
             .then((response) => {
                 const { data, links } = response.data;
                 this.setState({ data, links });

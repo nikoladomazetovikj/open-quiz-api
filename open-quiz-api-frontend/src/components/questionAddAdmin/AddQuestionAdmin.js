@@ -108,7 +108,7 @@ const AddQuestionAdmin = () => {
 
         // Send POST request to /api/addQuestion with formData
         axios
-            .post('http://127.0.0.1:8000/api/questions', formData, config)
+            .post(`${process.env.BASE_URL}/api/questions`, formData, config)
             .then((response) => {
                 setFormData({
                     question: '',

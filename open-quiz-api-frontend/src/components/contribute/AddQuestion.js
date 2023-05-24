@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button, Card, Alert } from 'react-bootstrap';
 import CategoryFormContribute from '@/components/contribute/CategoryFormContribute';
 import DifficultyFormContribute from "@/components/contribute/DifficultyFormContribute";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 const AddQuestion = () => {
     const [formData, setFormData] = useState({
@@ -93,7 +94,7 @@ const AddQuestion = () => {
         }
 
 
-        fetch('http://127.0.0.1:8000/api/addQuestion', {
+        fetch(`${process.env.BASE_URL}/api/addQuestion`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

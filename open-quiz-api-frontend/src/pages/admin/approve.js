@@ -7,7 +7,7 @@ export const approveQuestion = async (questionId, token) => {
 
     try {
         await axios.patch(
-            `http://127.0.0.1:8000/api/questions/${questionId}`,
+            `${process.env.BASE_URL}/api/questions/${questionId}`,
             {},
             config
         );

@@ -3,8 +3,10 @@ import { useState } from "react";
 import CategoryForm from "@/components/home/CategoryForm";
 import DifficultyForm from "@/components/home/DifficultyForm";
 import QuestionSelectForm from "@/components/home/QuestionSelectForm";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 const FormGenerate = () => {
+
     const [selectedCategory, setSelectedCategory] = useState("");
     const [selectedDifficulty, setSelectedDifficulty] = useState("");
     const [selectedQuestion, setSelectedQuestion] = useState("");
@@ -29,7 +31,7 @@ const FormGenerate = () => {
             return;
         }
 
-        const link = `http://127.0.0.1:8000/api/quizQuestions/${selectedCategory}/${selectedDifficulty}/${selectedQuestion}`;
+        const link = `${process.env.BASE_URL}/api/quizQuestions/${selectedCategory}/${selectedDifficulty}/${selectedQuestion}`;
 
         setGeneratedLink(link);
     };

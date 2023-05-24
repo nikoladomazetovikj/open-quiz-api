@@ -1,7 +1,7 @@
-import {Card, Col, Container, Row} from "react-bootstrap";
+import {Col, Container, Row} from "react-bootstrap";
 import FormGenerate from "@/components/home/FormGenerate";
 
-const Home = props => {
+const Home = () => {
 
     return (
         <Container>

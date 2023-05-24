@@ -7,7 +7,7 @@ export const deleteQuestion = async (questionId, token) => {
 
     try {
         await axios.delete(
-            `http://127.0.0.1:8000/api/questions/${questionId}`,
+            `${process.env.BASE_URL}/api/questions/${questionId}`,
             {},
             config
         );

@@ -1,7 +1,7 @@
 import React from "react";
 import {Container, Nav, Navbar} from "react-bootstrap";
 
-const AdminHeader = props => {
+const AdminHeader = () => {
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>

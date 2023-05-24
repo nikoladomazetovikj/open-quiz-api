@@ -10,7 +10,7 @@ const Logout = () => {
         const logout = async () => {
             try {
                 // Make a GET request to the logout API with authorization header
-                await fetch('http://127.0.0.1:8000/api/logout', {
+                await fetch(`${process.env.BASE_URL}/api/logout`, {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,
