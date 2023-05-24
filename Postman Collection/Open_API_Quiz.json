@@ -292,12 +292,12 @@
 	],
 	"variable": [
 		{
-			"id": "2a82caf8-a854-4ba3-8079-cbb9da44795d",
+			"id": "4bca13ad-a901-443d-8578-01f9d764d532",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "0306968c-59d3-49b1-af8b-2b604e17b4b4",
+			"id": "d54f8d27-2056-4429-a308-2891e0805e7a",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
