@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ApproveQuestionRequest;
+use App\Http\Requests\CLientQuestionRequest;
 use App\Http\Requests\DeleteQuestionRequest;
 use App\Http\Requests\QuestionRequest;
 use App\Http\Resources\ClientQuestionResource;
@@ -44,6 +45,7 @@ class QuestionController extends Controller
             'question' => $request->question,
             'category_id' => $request->category_id,
             'difficulty_id' => $request->difficulty_id,
+            'is_approved' => true
         ]);
 
         $answer = Answer::create([
@@ -111,7 +113,7 @@ class QuestionController extends Controller
         return ClientQuestionResource::collection($questions);
     }
 
-    public function clientAddQuestion(Request $request)
+    public function clientAddQuestion(ClientQuestionRequest $request)
     {
         $question = Question::create([
             'question' => $request->question,
