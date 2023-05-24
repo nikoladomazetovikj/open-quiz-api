@@ -67,6 +67,34 @@
 						"url": "{{base_url}}/api/addQuestion"
 					},
 					"response": []
+				},
+				{
+					"name": "Admin Add Question",
+					"id": "ab945fb7-880b-4a41-ac05-c435a551d2a8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearer}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/api/questions/all/all"
+					},
+					"response": []
 				}
 			],
 			"id": "fb06b3a7-b494-44f8-bb85-e13ed7bcba3e"
@@ -292,12 +320,12 @@
 	],
 	"variable": [
 		{
-			"id": "bd804723-c3eb-4c47-b3b5-5c315d82c80d",
+			"id": "76b6b34b-b69c-4ac5-9c1f-5d1444d1758c",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "d7eebb81-0c3f-4143-bb8d-fc74a733c41b",
+			"id": "f1a5cc97-3b32-465b-8f93-0450eb345a25",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
