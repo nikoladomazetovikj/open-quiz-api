@@ -38,7 +38,7 @@ class QuestionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(QuestionRequest $request)
     {
         $question = Question::create([
             'question' => $request->question,
@@ -109,5 +109,30 @@ class QuestionController extends Controller
             ->get();
 
         return ClientQuestionResource::collection($questions);
+    }
+
+    public function clientAddQuestion(Request $request)
+    {
+        $question = Question::create([
+            'question' => $request->question,
+            'category_id' => $request->category_id,
+            'difficulty_id' => $request->difficulty_id,
+        ]);
+
+        $answer = Answer::create([
+            'answer_1' => $request->answer_1,
+            'answer_2' => $request->answer_2,
+            'answer_3' => $request->answer_3,
+            'answer_4' => $request->answer_4,
+            'answer_1_is_true' => $request->answer_1_is_true,
+            'answer_2_is_true' => $request->answer_2_is_true,
+            'answer_3_is_true' => $request->answer_3_is_true,
+            'answer_4_is_true' => $request->answer_4_is_true,
+            'question_id' => $question->id
+        ]);
+
+        $res = Question::with('answers')->where('id', $question->id);
+
+        return QuestionResource::collection($res->get());
     }
 }

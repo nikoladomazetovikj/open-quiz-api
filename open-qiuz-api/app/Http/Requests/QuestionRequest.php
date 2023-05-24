@@ -25,7 +25,15 @@ class QuestionRequest extends FormRequest
             'question' => 'required',
             'category_id' => 'required',
             'difficulty_id' => 'required',
-            'is_approved' => ['required', 'boolean']
+            'is_approved' => ['required', 'boolean'],
+            'answer_1' => 'required',
+            'answer_2' => 'required',
+            'answer_3' => 'required',
+            'answer_4' => 'required',
+            'answer_1_is_true' => 'required',
+            'answer_2_is_true' => 'required',
+            'answer_3_is_true' => 'required',
+            'answer_4_is_true' => 'required',
         ];
     }
 }

@@ -30,6 +30,6 @@ Route::get('allCategories', [\App\Http\Controllers\Api\CategoryController::class
 Route::get('allDifficulties', [\App\Http\Controllers\Api\DifficultyController::class, 'index']);
 Route::get('quizQuestions/{categoryId}/{difficultyId}/{limit}', [\App\Http\Controllers\Api\QuestionController::class,
     'clientQuestions']);
-Route::post('addQuestion', [\App\Http\Controllers\Api\QuestionController::class, 'store']);
+Route::post('addQuestion', [\App\Http\Controllers\Api\QuestionController::class, 'clientAddQuestion']);
 Route::post('/login', [\App\Http\Controllers\Api\AuthController::class, 'login']);
 
