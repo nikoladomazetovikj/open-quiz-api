@@ -4,7 +4,9 @@
 
 1. Install composer (latest version)
 
+```
 https://getcomposer.org/download/
+```
 
 2. Run this command:
 
