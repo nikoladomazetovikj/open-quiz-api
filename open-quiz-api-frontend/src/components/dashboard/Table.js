@@ -1,13 +1,37 @@
 import React from 'react';
-import {Table, Button, Pagination} from 'react-bootstrap';
+import {Table, Button, Pagination, Alert} from 'react-bootstrap';
 import axios from 'axios';
 import {capitalizeFirstLetter} from "@/helpers/capitalizeFirstLetter";
 import Link from "next/link";
+import {approveQuestion} from "@/pages/admin/approve";
 
 class TableComponent extends React.Component {
+
     state = {
         data: [],
         links: null,
+        successMessage: null,
+    };
+
+
+    handleApproveClick = async (questionId) => {
+        const token = document.cookie.replace(
+            /(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/,
+            '$1'
+        );
+
+        try {
+            await approveQuestion(questionId, token); // Call the separate function
+            this.fetchData(); // Refresh the data after successful approval
+            this.setState({ successMessage: 'Question approved successfully' });
+        } catch (error) {
+            // Handle error or display error message here
+        }
+    };
+
+
+    dismissAlert = () => {
+        this.setState({ successMessage: null });
     };
 
     componentDidMount() {
@@ -50,10 +74,15 @@ class TableComponent extends React.Component {
     };
 
     render() {
-        const { data, links } = this.state;
+        const { data, links, successMessage  } = this.state;
 
         return (
             <>
+                {successMessage && (
+                    <Alert variant="success" onClose={this.dismissAlert} dismissible>
+                        {successMessage}
+                    </Alert>
+                )}
                 <Table striped bordered hover>
                     <thead>
                     <tr>
@@ -106,9 +135,8 @@ class TableComponent extends React.Component {
                                 </ul>
                             </td>
                             <td>
-                                <Link href={`/admin/approve/${question.id}`}>
-                                    <Button variant="success">Approve</Button>
-                                </Link>
+                                <Button variant="success"
+                                        onClick={() => this.handleApproveClick(question.id)}>Approve</Button>
                             </td>
                             <td>
                                 <Link href={`/admin/approve/${question.id}`}>
