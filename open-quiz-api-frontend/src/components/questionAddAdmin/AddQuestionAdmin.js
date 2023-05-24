@@ -127,7 +127,6 @@ const AddQuestionAdmin = () => {
                 setSuccessMessage('Question added successfully');
             })
             .catch((error) => {
-                console.error(error);
                 alert('An error occurred while adding the question.');
             });
     };

@@ -35,7 +35,7 @@ const LoginForm = () => {
             }
         } catch (error) {
             // Handle network or server errors
-            console.error("Error:", error);
+
         }
     };
 

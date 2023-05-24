@@ -1,5 +1,5 @@
-import React from "React";
-import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import React from "react";
+import {Container, Nav, Navbar} from "react-bootstrap";
 
 const Header = props => {
     return (

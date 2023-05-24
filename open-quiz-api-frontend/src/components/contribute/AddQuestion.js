@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Form, Button, Card, Alert } from 'react-bootstrap';
-import DifficultyForm from '@/components/home/DifficultyForm';
 import CategoryFormContribute from '@/components/contribute/CategoryFormContribute';
 import DifficultyFormContribute from "@/components/contribute/DifficultyFormContribute";
 
@@ -46,7 +45,6 @@ const AddQuestion = () => {
 
         if (type === 'checkbox') {
             const updatedFormData = { ...formData };
-            // Set all answer_*_is_true properties to false
             Object.keys(updatedFormData).forEach((key) => {
                 if (key.startsWith('answer_') && key.endsWith('_is_true')) {
                     updatedFormData[key] = false;
@@ -94,7 +92,7 @@ const AddQuestion = () => {
             return;
         }
 
-        // Send POST request to /api/addQuestion with formData
+
         fetch('http://127.0.0.1:8000/api/addQuestion', {
             method: 'POST',
             headers: {

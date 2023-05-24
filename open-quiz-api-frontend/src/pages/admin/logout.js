@@ -36,7 +36,7 @@ const Logout = () => {
         }
     }, [router, token]);
 
-    return null; // You can return any component here or leave it as null
+    return null;
 };
 
 

@@ -1,8 +1,7 @@
 import React from 'react';
-import {Table, Button, Pagination, Alert} from 'react-bootstrap';
+import {Table, Button, Alert} from 'react-bootstrap';
 import axios from 'axios';
 import {capitalizeFirstLetter} from "@/helpers/capitalizeFirstLetter";
-import Link from "next/link";
 import {approveQuestion} from "@/pages/admin/approve";
 
 class TableComponent extends React.Component {
@@ -21,7 +20,7 @@ class TableComponent extends React.Component {
         );
 
         try {
-            await approveQuestion(questionId, token); // Call the separate function
+            await approveQuestion(questionId, token);
             this.fetchData(); // Refresh the data after successful approval
             this.setState({ successMessage: 'Question approved successfully' });
         } catch (error) {
@@ -70,7 +69,7 @@ class TableComponent extends React.Component {
                 this.setState({ data, links });
             })
             .catch((error) => {
-                console.error('Error fetching data:', error);
+
             });
     };
 

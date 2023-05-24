@@ -12,8 +12,6 @@ export const approveQuestion = async (questionId, token) => {
             config
         );
 
-        // Handle success or perform any additional logic here
-        console.log('Question approved successfully');
     } catch (error) {
         console.error('Error approving question:', error);
         throw error;
