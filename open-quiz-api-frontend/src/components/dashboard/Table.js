@@ -29,6 +29,21 @@ class TableComponent extends React.Component {
         }
     };
 
+    handleDeleteClick = async (questionId) => {
+        const token = document.cookie.replace(
+            /(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/,
+            '$1'
+        );
+
+        try {
+            await approveQuestion(questionId, token); // Call the separate function
+            this.fetchData(); // Refresh the data after successful approval
+            this.setState({ successMessage: 'Question deleted successfully' });
+        } catch (error) {
+            // Handle error or display error message here
+        }
+    };
+
 
     dismissAlert = () => {
         this.setState({ successMessage: null });
@@ -139,9 +154,8 @@ class TableComponent extends React.Component {
                                         onClick={() => this.handleApproveClick(question.id)}>Approve</Button>
                             </td>
                             <td>
-                                <Link href={`/admin/approve/${question.id}`}>
-                                    <Button variant="danger" >Delete</Button>
-                                </Link>
+                                <Button variant="danger"
+                                        onClick={() => this.handleDeleteClick(question.id)}>Delete</Button>
                             </td>
                         </tr>
                     ))}
