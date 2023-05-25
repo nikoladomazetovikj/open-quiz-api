@@ -103,21 +103,25 @@ const AddQuestion = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                setFormData({
-                    question: '',
-                    category_id: null,
-                    difficulty_id: null,
-                    answer_1: '',
-                    answer_2: '',
-                    answer_3: '',
-                    answer_4: '',
-                    answer_1_is_true: false,
-                    answer_2_is_true: false,
-                    answer_3_is_true: false,
-                    answer_4_is_true: false,
-                });
-                setFieldErrors({});
-                setSuccessMessage('Question added successfully');
+                if (data.errors) {
+                    setFieldErrors(data.errors);
+                } else {
+                    setFormData({
+                        question: '',
+                        category_id: null,
+                        difficulty_id: null,
+                        answer_1: '',
+                        answer_2: '',
+                        answer_3: '',
+                        answer_4: '',
+                        answer_1_is_true: false,
+                        answer_2_is_true: false,
+                        answer_3_is_true: false,
+                        answer_4_is_true: false,
+                    });
+                    setFieldErrors({});
+                    setSuccessMessage('Question added successfully');
+                }
             })
             .catch((error) => {
                 console.error(error);
@@ -143,7 +147,6 @@ const AddQuestion = () => {
                             name="question"
                             value={formData.question}
                             onChange={handleInputChange}
-                            required
                             isInvalid={!!fieldErrors.question}
                         />
                         <Form.Control.Feedback type="invalid">
@@ -159,7 +162,6 @@ const AddQuestion = () => {
                             name="answer_1"
                             value={formData.answer_1}
                             onChange={handleInputChange}
-                            required
                             isInvalid={!!fieldErrors.answer_1}
                         />
                         <Form.Control.Feedback type="invalid">
@@ -181,7 +183,6 @@ const AddQuestion = () => {
                             name="answer_2"
                             value={formData.answer_2}
                             onChange={handleInputChange}
-                            required
                             isInvalid={!!fieldErrors.answer_2}
                         />
                         <Form.Control.Feedback type="invalid">
@@ -203,7 +204,6 @@ const AddQuestion = () => {
                             name="answer_3"
                             value={formData.answer_3}
                             onChange={handleInputChange}
-                            required
                             isInvalid={!!fieldErrors.answer_3}
                         />
                         <Form.Control.Feedback type="invalid">
@@ -225,7 +225,6 @@ const AddQuestion = () => {
                             name="answer_4"
                             value={formData.answer_4}
                             onChange={handleInputChange}
-                            required
                             isInvalid={!!fieldErrors.answer_4}
                         />
                         <Form.Control.Feedback type="invalid">
