@@ -29,8 +29,8 @@ Admin has permissions to add, delete or approve question.
  ```
  2. Install some server (for e.g. Apache)
  3. You need to setup server and client side. 
- 4. Setup Server - https://github.com/nikoladomazetovikj/open-quiz-api.git
- 5. Setup Client -  https://github.com/nikoladomazetovikj/open-quiz-api.git
+ 4. [Setup Server](https://github.com/nikoladomazetovikj/open-quiz-api/tree/master/open-qiuz-api#open-api-quiz-server)
+ 5. [Setup Client](https://github.com/nikoladomazetovikj/open-quiz-api/tree/master/open-quiz-api-frontend#open-api-quiz-client)
 
 ## API Collection 
  
