@@ -149,7 +149,6 @@ const AddQuestionAdmin = () => {
                             name="question"
                             value={formData.question}
                             onChange={handleInputChange}
-                            required
                             isInvalid={!!fieldErrors.question}
                         />
                         <Form.Control.Feedback type="invalid">
@@ -165,7 +164,6 @@ const AddQuestionAdmin = () => {
                             name="answer_1"
                             value={formData.answer_1}
                             onChange={handleInputChange}
-                            required
                             isInvalid={!!fieldErrors.answer_1}
                         />
                         <Form.Control.Feedback type="invalid">
@@ -187,7 +185,6 @@ const AddQuestionAdmin = () => {
                             name="answer_2"
                             value={formData.answer_2}
                             onChange={handleInputChange}
-                            required
                             isInvalid={!!fieldErrors.answer_2}
                         />
                         <Form.Control.Feedback type="invalid">
@@ -209,7 +206,6 @@ const AddQuestionAdmin = () => {
                             name="answer_3"
                             value={formData.answer_3}
                             onChange={handleInputChange}
-                            required
                             isInvalid={!!fieldErrors.answer_3}
                         />
                         <Form.Control.Feedback type="invalid">
@@ -231,7 +227,6 @@ const AddQuestionAdmin = () => {
                             name="answer_4"
                             value={formData.answer_4}
                             onChange={handleInputChange}
-                            required
                             isInvalid={!!fieldErrors.answer_4}
                         />
                         <Form.Control.Feedback type="invalid">
