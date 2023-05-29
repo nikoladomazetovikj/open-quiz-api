@@ -403,12 +403,12 @@
 	],
 	"variable": [
 		{
-			"id": "ef365796-cb0f-4a23-898b-1271a42e9b94",
+			"id": "42e001d8-c804-49a4-bb00-de99d2735c5c",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "6bdf0982-1169-4485-9e2c-8e01e91355d6",
+			"id": "13d6fd1a-412c-44af-ab7a-27e22808ae2d",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
