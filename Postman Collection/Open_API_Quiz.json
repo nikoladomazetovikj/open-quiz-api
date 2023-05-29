@@ -158,7 +158,7 @@
 								"token": "{{bearer}}"
 							}
 						},
-						"method": "PUT",
+						"method": "DELETE",
 						"header": [
 							{
 								"key": "Accept",
@@ -403,12 +403,12 @@
 	],
 	"variable": [
 		{
-			"id": "25f03bbe-6334-4ac1-80df-590e63684625",
+			"id": "ef365796-cb0f-4a23-898b-1271a42e9b94",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "45e583a2-09a7-4018-b3e1-856cdf656800",
+			"id": "6bdf0982-1169-4485-9e2c-8e01e91355d6",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
