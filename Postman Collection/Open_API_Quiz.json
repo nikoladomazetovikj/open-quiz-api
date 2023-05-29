@@ -141,6 +141,43 @@
 						"url": "{{base_url}}/api/questions/1"
 					},
 					"response": []
+				},
+				{
+					"name": "Delete Question",
+					"id": "38178adc-a559-485a-87da-b55ee5ee8dd4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearer}}"
+							}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/questions/1"
+					},
+					"response": []
 				}
 			],
 			"id": "fb06b3a7-b494-44f8-bb85-e13ed7bcba3e"
@@ -366,12 +403,12 @@
 	],
 	"variable": [
 		{
-			"id": "b51ea6b3-7780-462b-a5fc-89fee8970ae1",
+			"id": "25f03bbe-6334-4ac1-80df-590e63684625",
 			"key": "bearer",
 			"value": "any"
 		},
 		{
-			"id": "0dabffee-175f-459d-aa17-7212aca6e073",
+			"id": "45e583a2-09a7-4018-b3e1-856cdf656800",
 			"key": "base_url",
 			"value": "http://127.0.0.1:8000"
 		}
