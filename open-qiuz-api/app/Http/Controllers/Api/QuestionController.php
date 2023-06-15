@@ -23,10 +23,12 @@ class QuestionController extends Controller
         $query = Question::with('answers', 'difficulties', 'categories')
             ->where('is_approved', false);
 
+        // filter response by categories
         if ($categoryId !== 'all') {
             $query->where('category_id', $categoryId);
         }
 
+        // filter response by difficulty
         if ($difficultyId !== 'all') {
             $query->where('difficulty_id', $difficultyId);
         }
@@ -78,6 +80,7 @@ class QuestionController extends Controller
      */
     public function update(ApproveQuestionRequest $request, Question $question)
     {
+        // only for admins
         $question->update(['is_approved' => true]);
 
         return new QuestionResource($question);
@@ -95,6 +98,7 @@ class QuestionController extends Controller
 
     public function clientQuestions($categoryId, $difficultyId, $limit)
     {
+        // create response for the clients
         $query = Question::with('answers', 'difficulties', 'categories')
             ->where('is_approved', true);
 
